@@ -24,8 +24,6 @@
 
 ## Перегляд галереї
 
-Відкрийте `gallery/index.html` для перегляду скріншотів системи.
-
 ## Демо
 
-[Переглянути галерею](https://your-username.github.io/cfweb-gallery/)
+[Переглянути галерею](https://pestov-v.github.io/cfweb-gallery/)

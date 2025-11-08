@@ -3,6 +3,7 @@
 ## Проблема
 
 Поточна структура проекту:
+
 ```
 cfweb/
 ├── cfweb.ukrpay.net_*.webp (зображення в корені)
@@ -46,6 +47,7 @@ mv cfweb.ukrpay.net*.webp gallery/images/
 ### Крок 5: Перевірити результат
 
 Після деплою (зазвичай 1-2 хвилини), ваш сайт буде доступний за адресою:
+
 ```
 https://your-username.github.io/repository-name/
 ```
@@ -77,6 +79,7 @@ mv gallery/index.html index.html
 ### Результат
 
 Сайт буде доступний за адресою:
+
 ```
 https://your-username.github.io/repository-name/
 ```
@@ -88,6 +91,7 @@ https://your-username.github.io/repository-name/
 ## Рекомендації
 
 **Варіант 1** краще, тому що:
+
 - ✅ Всі файли сайту в одній папці (`gallery/`)
 - ✅ Легше керувати структурою
 - ✅ Можна додавати інші файли в корінь без впливу на сайт
@@ -121,4 +125,3 @@ https://your-username.github.io/repository-name/
 
 - Перевірте налаштування Source/Folder в Settings → Pages
 - Переконайтеся, що `index.html` знаходиться в папці, вказаній в налаштуваннях
-
