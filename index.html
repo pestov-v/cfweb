@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CFWeb - Corporate Finance Web Application Gallery</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .header h1 {
+        color: #2c3e50;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .header p {
+        color: #7f8c8d;
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+      }
+
+      .gallery-item {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-item-content {
+        padding: 20px;
+      }
+
+      .gallery-item h3 {
+        color: #2c3e50;
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .gallery-item p {
+        color: #7f8c8d;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 12px 24px;
+        background: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: background 0.3s ease;
+      }
+
+      .back-link:hover {
+        background: #2980b9;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+
+      .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 20px;
+        width: 90%;
+        max-width: 1000px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .modal img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close:hover {
+        color: #3498db;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+          margin: 10px;
+        }
+
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .gallery-item img {
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="https://portfolio-pestov-v.vercel.app/" class="back-link"
+        >← Back to Portfolio</a
+      >
+
+      <div class="header">
+        <h1>CFWeb - Corporate Finance Web Application</h1>
+        <p>
+          Comprehensive corporate finance management system with user roles,
+          product management, and regulatory compliance features
+          <a href="https://test-cfweb.ukrpay.net/" target="_blank"
+            >https://test-cfweb.ukrpay.net/</a
+          >
+        </p>
+      </div>
+
+      <div class="gallery">
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net.webp')"
+        >
+          <img src="gallery/images/cfweb.ukrpay.net.webp" alt="CFWeb Main Dashboard" />
+          <div class="gallery-item-content">
+            <h3>Main Dashboard</h3>
+            <p>
+              Main CFWeb system interface with navigation and general
+              information
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net_users.webp')"
+        >
+          <img src="gallery/images/cfweb.ukrpay.net_users.webp" alt="User Management" />
+          <div class="gallery-item-content">
+            <h3>User Management</h3>
+            <p>
+              User management system with detailed information and role settings
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net_roles.webp')"
+        >
+          <img src="gallery/images/cfweb.ukrpay.net_roles.webp" alt="Role Management" />
+          <div class="gallery-item-content">
+            <h3>Role Management</h3>
+            <p>
+              Role and access rights configuration for different user categories
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net_products.webp')"
+        >
+          <img
+            src="gallery/images/cfweb.ukrpay.net_products.webp"
+            alt="Product Management"
+          />
+          <div class="gallery-item-content">
+            <h3>Product Management</h3>
+            <p>
+              Financial products catalog with editing and configuration
+              capabilities
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net_reglaments.webp')"
+        >
+          <img
+            src="gallery/images/cfweb.ukrpay.net_reglaments.webp"
+            alt="Regulations"
+          />
+          <div class="gallery-item-content">
+            <h3>Regulations</h3>
+            <p>Regulations and normative documents management system</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net_dictionaries.webp')"
+        >
+          <img
+            src="gallery/images/cfweb.ukrpay.net_dictionaries.webp"
+            alt="Dictionaries"
+          />
+          <div class="gallery-item-content">
+            <h3>Dictionaries</h3>
+            <p>Dictionary system for data standardization and terminology</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net_bars.webp')"
+        >
+          <img src="gallery/images/cfweb.ukrpay.net_bars.webp" alt="BARS Integration" />
+          <div class="gallery-item-content">
+            <h3>BARS Integration</h3>
+            <p>Integration module with BARS banking system for data exchange</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net_ea.webp')"
+        >
+          <img src="gallery/images/cfweb.ukrpay.net_ea.webp" alt="Electronic Archive" />
+          <div class="gallery-item-content">
+            <h3>Electronic Archive</h3>
+            <p>Electronic document management and archiving system</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net_anketa.webp')"
+        >
+          <img
+            src="gallery/images/cfweb.ukrpay.net_anketa.webp"
+            alt="Client Questionnaire"
+          />
+          <div class="gallery-item-content">
+            <h3>Client Questionnaire</h3>
+            <p>Form for collecting and processing bank client information</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net_claim.webp')"
+        >
+          <img
+            src="gallery/images/cfweb.ukrpay.net_claim.webp"
+            alt="Claims Management"
+          />
+          <div class="gallery-item-content">
+            <h3>Claims Management</h3>
+            <p>System for processing and tracking client claims</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          onclick="openModal('gallery/images/cfweb.ukrpay.net_grammatical-cases.webp')"
+        >
+          <img
+            src="gallery/images/cfweb.ukrpay.net_grammatical-cases.webp"
+            alt="Grammatical Cases"
+          />
+          <div class="gallery-item-content">
+            <h3>Grammatical Cases</h3>
+            <p>Module for proper declension of names and titles in documents</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="" />
+      </div>
+    </div>
+
+    <script>
+      function openModal(imageSrc) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        modal.style.display = "block";
+        modalImg.src = imageSrc;
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+      }
+
+      // Close modal when clicking outside the image
+      window.onclick = function (event) {
+        const modal = document.getElementById("imageModal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      };
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
+      });
+    </script>
+  </body>
+</html>
